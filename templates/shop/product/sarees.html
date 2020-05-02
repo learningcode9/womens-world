@@ -1,0 +1,36 @@
+{% extends "shop/product/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/sarees.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="space">
+  <div class="container">
+      <div class="row">
+        {% for product in products %}
+         <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
+          <div class="card">
+            <a href="{{ product.get_absolute_url }}">
+           <img src={{product.images.url}} style="background-color:azure" alt="sarees" class="img-thumbnail ce">
+           </a>
+           <div class="card-body">
+            <h3 class="card-title" style="font-size: 12px;">
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+            </h3>
+              <p class="card-text" style="color:rgb(0, 174, 255)">${{product.price}}</p>
+             
+            </div>
+          </div>
+         </div>
+         {% endfor %}
+      
+           
+      </div>
+      </div>
+  </div>
+  </div>
+  <hr/>
+      
+
+{% endblock content %}

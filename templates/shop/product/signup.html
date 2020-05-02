@@ -1,0 +1,14 @@
+{% extends "shop/product/navbar.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="margin-top: 50px;text-align:center">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+            <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Signup</button>
+        </form>
+    
+</div>
+{% endblock %}
